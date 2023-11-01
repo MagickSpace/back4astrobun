@@ -10,5 +10,19 @@ export default defineConfig({
     devOverlay: true
   },
   site: 'https://example.com',
-  integrations: [mdx(), sitemap(), react()]
+  integrations: [
+    mdx(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'uk',
+        locales: {
+          en: 'en-US', 
+          es: 'es-ES',
+          fr: 'fr-CA',
+          uk: 'uk-UA',
+          ru: 'ru-UA',
+        },
+      },
+    }), 
+    react()]
 });
